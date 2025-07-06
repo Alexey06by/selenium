@@ -6,19 +6,10 @@
   "scripts": {
     "test": "mocha --timeout 30000"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Alexey06by/selenium.git"
-  },
   "author": "Alexey",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Alexey06by/selenium/issues"
-  },
-  "homepage": "https://github.com/Alexey06by/selenium#readme",
   "devDependencies": {
     "chai": "^5.2.0",
-    "chromedriver": "^138.0.1",
     "mocha": "^11.7.1",
     "selenium-webdriver": "4.33"
   }
