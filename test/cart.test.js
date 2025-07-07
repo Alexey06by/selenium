@@ -1,12 +1,3 @@
-// // // Добавление товара в корзину
-// // // Купить сейчас
-
-// // // Перейти к оформлению из корзины
-
-// // // Логин с невалидными данными
-// // // Отображение кнопки вход во всех секциях сайта из хедера
-
-
 import { Builder, By, until } from "selenium-webdriver";
 import { describe, it, before, after } from "mocha";
 import { expect } from "chai";
@@ -24,7 +15,7 @@ describe("Cart", function () {
         await driver.quit();
     });
 
-    it("Should proceed to checkout from cart", async function () {
+    it.only("Should proceed to checkout from cart", async function () {
         await driver.get("https://catalog.onliner.by");
     
         const catalogItem = await driver.wait(
