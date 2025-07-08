@@ -15,7 +15,7 @@ describe("Cart", function () {
         await driver.quit();
     });
 
-    it.only("Should proceed to checkout from cart", async function () {
+    it("Should proceed to checkout from cart", async function () {
         await driver.get("https://catalog.onliner.by");
     
         const catalogItem = await driver.wait(
