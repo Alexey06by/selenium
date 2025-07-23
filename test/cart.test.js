@@ -20,7 +20,7 @@ describe("Cart", function () {
     
         const catalogItem = await driver.wait(
             until.elementLocated(By.css(
-                '.catalog-form__slider:nth-child(17) .catalog-form__slider-list > .catalog-form__slider-item:first-child .catalog-form__preview'
+                'a.catalog-form__preview[href$="/cpu/amd/ryzen55600"]'
             )),
             5000
         );     

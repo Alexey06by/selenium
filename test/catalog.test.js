@@ -1,6 +1,8 @@
 import { Builder, By, until } from "selenium-webdriver";
 import { describe, it, before, after } from "mocha";
 import { expect } from "chai";
+import dotenv from "dotenv";
+dotenv.config();
 
 let driver;
 
@@ -16,7 +18,7 @@ describe("Catalog", function () {
     });
 
     it("Should add item to cart", async function () {
-        await driver.get("https://www.onliner.by");
+        await driver.get(process.env.BASE_URL);
 
         const catalog = await driver.wait(
             until.elementLocated(
@@ -30,7 +32,7 @@ describe("Catalog", function () {
 
         const catalogItem = await driver.wait(
             until.elementLocated(By.css(
-                '.catalog-form__slider:nth-child(4) .catalog-form__slider-list > .catalog-form__slider-item:first-child .catalog-form__preview'
+                'a.catalog-form__preview[href$="/headphones/qcy/qcyt13wht"]'
             )),
             5000
         );     
@@ -73,7 +75,7 @@ describe("Catalog", function () {
     
         const catalogItem = await driver.wait(
             until.elementLocated(By.css(
-                '.catalog-form__slider:nth-child(17) .catalog-form__slider-list > .catalog-form__slider-item:first-child .catalog-form__preview'
+                'a.catalog-form__preview[href$="/cpu/amd/ryzen55600"]'
             )),
             5000
         );     

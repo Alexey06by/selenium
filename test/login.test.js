@@ -19,7 +19,7 @@ describe("Login", function () {
     });
 
     it("Should show error message if login with invalid credentials", async function () {
-        await driver.get("https://www.onliner.by");
+        await driver.get(process.env.BASE_URL);
 
         const cookieRejectButton = await driver.wait(until.elementLocated(By.id('reject-button')));
         await cookieRejectButton.click();
@@ -37,13 +37,13 @@ describe("Login", function () {
             until.elementLocated(By.css('[placeholder="Ник или e-mail"]')), 
             5000
         );
-        await loginField.sendKeys(process.env.LOGIN);
+        await loginField.sendKeys(process.env.INVALID_LOGIN);
 
         const passwordField = await driver.wait(
             until.elementLocated(By.css('[placeholder="Пароль"]')), 
             5000
         );
-        await passwordField.sendKeys(process.env.PASSWORD);
+        await passwordField.sendKeys(process.env.INVALID_PASSWORD);
 
         const enterButton = await driver.wait(
             until.elementLocated(By.className("auth-button_primary")), 
