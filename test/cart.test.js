@@ -1,6 +1,8 @@
 import { Builder, By, until } from "selenium-webdriver";
 import { describe, it, before, after } from "mocha";
 import { expect } from "chai";
+import dotenv from "dotenv";
+dotenv.config();
 
 let driver;
 
@@ -16,7 +18,7 @@ describe("Cart", function () {
     });
 
     it("Should proceed to checkout from cart", async function () {
-        await driver.get("https://catalog.onliner.by");
+        await driver.get(process.env.CATALOG_URL);
     
         const catalogItem = await driver.wait(
             until.elementLocated(By.css(

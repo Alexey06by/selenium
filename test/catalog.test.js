@@ -71,7 +71,7 @@ describe("Catalog", function () {
     });  
 
    it("Should start playcing an order", async function () {
-        await driver.get("https://catalog.onliner.by");
+        await driver.get(process.env.CATALOG_URL);
     
         const catalogItem = await driver.wait(
             until.elementLocated(By.css(
