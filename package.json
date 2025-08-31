@@ -3,17 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Alexey06by/selenium.git"
+    "test": "mocha --timeout 30000"
   },
   "author": "Alexey",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Alexey06by/selenium/issues"
-  },
-  "homepage": "https://github.com/Alexey06by/selenium#readme"
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "dotenv": "^17.0.1",
+    "mocha": "^11.7.1",
+    "selenium-webdriver": "4.33"
+  }
 }
